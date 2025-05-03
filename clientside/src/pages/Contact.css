@@ -1,0 +1,189 @@
+/* Base */
+.contact-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #0F0F1E, #1A1A30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Glass Card */
+.glass-card {
+  background: #07acff1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Title */
+.form-title {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Form Group */
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+/* Inputs and Select */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  background: rgba(112, 207, 255, 0.15);
+  border: 1px solid transparent;
+  padding: 1rem 1rem 0.5rem;
+  border-radius: 12px;
+  color: #f5f5f5;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+input:focus,
+select:focus {
+  border-color: #90cdf4;
+  background: rgba(20, 24, 86, 0.2);
+  box-shadow: 0 0 10px #90cdf4aa;
+}
+
+/* Floating labels */
+.floating label {
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+  color: #ccc;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+select:focus + label,
+select:not([value=""]) + label {
+  top: -0.6rem;
+  left: 0.8rem;
+  background: #000000;
+  padding: 0 0.4rem;
+  font-size: 0.75rem;
+  color: #90cdf4;
+  border-radius: 4px;
+  
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-label {
+  color: #eee;
+  font-size: 0.95rem;
+}
+
+/* Group label */
+.group-label {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 0.2rem;
+}
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #0b1625; /* Dark blue background for dropdown itself */
+  color: #ffffff; /* White text for selected item */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.dropdown option {
+  background-color: #1f2a40; /* Slightly lighter dark background for options */
+  color: #ffffff; /* White text for options */
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Optional hover effect to feel alive */
+.dropdown option:hover {
+  background-color: #2e3d5c;
+}
+
+/* Focus glow to make dropdown more interactive */
+.dropdown:focus {
+  outline: none;
+  border-color: #00c3ff;
+  box-shadow: 0 0 8px #00c3ff;
+}
+
+.image-upload{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #ffffff32;
+  border-radius: 10px;
+  background-color: #0b1625; /* Dark blue background for upload area */
+  color: #ffffff3c; /* White text for upload area */
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/* Submit button */
+.submit-button {
+  margin-top: 6rem;
+  padding: 0.9rem;
+  background: linear-gradient(330deg, #006d80 0%, #22ccea 50%, #c9fffa 100%);
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(270deg, #8dfbd6, #42ffc9);
+  color: #15263F;
+}
+
+
