@@ -1,35 +1,32 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import "./Contact.css";
 
 function Contact() {
-
-  let [name, setName] = useState("");
+  let [pname, setName] = useState("");
   let [phone, setPhone] = useState("");
   let [meal, setMeal] = useState("");
   let [focus, setFocus] = useState("");
-  let[img, setImg] = useState(false);
+  let [image, setImg] = useState(null);
   
- 
-
   return (
     <div className="contact-page">
       <div className={`glass-card`}>
         <h1 className="form-title">Connect With Us</h1>
-
+        
         <div className="form-group floating">
           <h5>Name</h5>
           <input type="text" onChange={(ev)=>{
             setName(ev.target.value);
           }} />
         </div>
-
+        
         <div className="form-group floating">
           <h5>Phone</h5>
           <input type="text" onChange={(ev)=>{
             setPhone(ev.target.value);
           }} />
         </div>
-
+        
         <div className="form-group">
           <h5>Meal Preference</h5>
           <div className="radio-group">
@@ -53,7 +50,7 @@ function Contact() {
             </label>
           </div>
         </div>
-
+        
         <div className="form-group floating">
           <h5>Focus Area</h5>
           <select name="focus" id="focus" onChange={(ev)=>{
@@ -69,31 +66,36 @@ function Contact() {
         </div>
         <h5>Upload your Diet Snap </h5>
         <div className="image-upload">
-          
-          <input type="file" name="file" onChange={(ev)=>{
+          <input type="file" name="image" onChange={(ev)=>{
             setImg(ev.target.files[0]);
-          }}  />
+          }} />
         </div>
         
         <button className="submit-button" onClick={async()=>{
-          var formData = new FormData();
-          formData.append("name", name);
-          formData.append("phone", phone);
-          formData.append("meal", meal);
-          formData.append("focus", focus);
-          // formData.append("file", img);
-
-          var fd_output = await fetch("http://localhost:5000/mod/insert1", {
-            method: "POST",
-            body: formData,
-          });
-
-          let data = await fd_output.json();
-          console.log(data);
+          try {
+            var formData = new FormData();
+            formData.append("pname", pname);
+            formData.append("phone", phone);
+            formData.append("meal", meal);
+            formData.append("focus", focus);
+            if(image){
+              formData.append("image", image);
+            }
+            
+            var fd_output = await fetch("http://localhost:5000/mod/insert1", {
+              method: "POST",
+              body: formData,
+              
+            });
+            
+            let data = await fd_output.json();
+            console.log(data);
+          } catch (error) {
+            console.error("Error submitting form:", error);
+          }
         }} >
           Contact Us
         </button>
-
         
       </div>
     </div>

@@ -3,10 +3,11 @@ const mdb = require("mongoose");
 
 const dbschema =  mdb.Schema(
     {
-        name: String,
-        Phone: Number,
+        pname: String,
+        phone: Number,
         meal:String,
-        focus:String
+        focus:String,
+        image:String
     }
 )
 
