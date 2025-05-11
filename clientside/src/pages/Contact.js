@@ -7,7 +7,18 @@ function Contact() {
   let [meal, setMeal] = useState("");
   let [focus, setFocus] = useState("");
   let [image, setImg] = useState(null);
-  
+  let [whenareyoustarting, setwhenareyoustarting]= useState([]);
+
+
+function whenStarting(ev){
+  if(ev.target.checked == true){
+    whenareyoustarting.push(ev.target.value)
+  }else{
+    var indexCheck= whenareyoustarting.indexOf(ev.target.value);
+    whenareyoustarting.splice(indexCheck,1);
+  }
+} 
+
   return (
     <div className="contact-page">
       <div className={`glass-card`}>
@@ -71,8 +82,22 @@ function Contact() {
           }} />
         </div>
         
+        <div><h5>When do you want to start?</h5>
+        <div className="checkboxclass">
+
+        <span><input type="checkbox" value="Now" id="checkbox" onChange={whenStarting}  />Now</span>  
+          <input type="checkbox" value="Today" id="checkbox" onChange={whenStarting}/><span>Today</span>
+          <input type="checkbox" value="Next Monday" id="checkbox" onChange={whenStarting}/><span>Next Monday</span>
+           
+        </div>
+         
+      
+        
+        
+        </div>
+
         <button className="submit-button" onClick={async()=>{
-          try {
+         
             var formData = new FormData();
             formData.append("pname", pname);
             formData.append("phone", phone);
@@ -81,6 +106,7 @@ function Contact() {
             if(image){
               formData.append("image", image);
             }
+            formData.append("time", whenareyoustarting);
             
             var fd_output = await fetch("http://localhost:5000/mod/insert1", {
               method: "POST",
@@ -90,9 +116,7 @@ function Contact() {
             
             let data = await fd_output.json();
             console.log(data);
-          } catch (error) {
-            console.error("Error submitting form:", error);
-          }
+          
         }} >
           Contact Us
         </button>

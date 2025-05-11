@@ -7,7 +7,8 @@ const dbschema =  mdb.Schema(
         phone: Number,
         meal:String,
         focus:String,
-        image:String
+        image:String,
+        time:String
     }
 )
 

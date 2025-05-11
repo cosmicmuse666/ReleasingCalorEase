@@ -8,7 +8,7 @@ router.get('/count', (req, res) => {
 })
 
 router.post("/insert1", async(req,res)=>{
-    try {
+    
         console.log("Form data is successfully received",req.body);
         
       
@@ -25,7 +25,8 @@ router.post("/insert1", async(req,res)=>{
             phone: req.body.phone,
             meal: req.body.meal,
             focus: req.body.focus,
-            image: image.name 
+            image: image.name,
+            time:req.body.time
         };
         
     
@@ -35,10 +36,7 @@ router.post("/insert1", async(req,res)=>{
             msg: "response after inserting obj in dbschema!", 
             data: insobj
         });
-    } catch (error) {
-        console.error("Error in insert1 route:", error);
-        res.status(500).json({ error: error.message });
-    }
+    
 })
 
 module.exports = router;
