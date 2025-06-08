@@ -8,7 +8,7 @@ const Nav1 = () => {
 
       <div style={styles.centerLinks}>
         <Link to="/" style={styles.link}>Home</Link>
-        <Link to="#" style={styles.link}>Product</Link>
+        <Link to="/select" style={styles.link}>Product</Link>
         <Link to="/contact" style={styles.link}>Contact</Link>
       </div>
 

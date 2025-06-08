@@ -5,8 +5,7 @@ const cors = require('cors');
 const m= require('mongoose');
 const bp = require('body-parser');
 const ef = require('express-fileupload');
-
-app.use(exp.static("public"));
+app.use(exp.static("assets"));
 
 m.connect("mongodb+srv://arnabganai:wl6SVciWk19m37cD@cluster0.edokzgz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log('MongoDB connected successfully'))

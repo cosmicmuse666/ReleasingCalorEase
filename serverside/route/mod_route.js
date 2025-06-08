@@ -2,9 +2,10 @@ const exp = require('express');
 const router = exp.Router();
 const controller_= require('../controller/controller.js');
 const dbschema = require("../model/dbschema.js")
+const fs = require("fs")
 
-router.get('/count', (req, res) => {
-    controller_.display(res);
+router.get("/test", async(req,res)=>{
+    res.json("testing its working!")
 })
 
 router.post("/insert1", async(req,res)=>{
@@ -36,7 +37,33 @@ router.post("/insert1", async(req,res)=>{
             msg: "response after inserting obj in dbschema!", 
             data: insobj
         });
-    
+
+        
+        
+})
+
+router.get('/select', async(req,res)=>{
+            
+          var data =  await dbschema.find()
+          res.json(data);
+
+        
+        
+})
+
+router.post('/del', async(req,res)=>{
+    var id= req.body.del_id;
+    var row = await dbschema.findById(id);
+    fs.unlinkSync("./assets/uploads/"+row.image)
+    await dbschema.findByIdAndDelete(id);
+    res.json("deleted")
+})
+
+router.post('/update', async(req,res)=>{
+     var id= req.body.uid;
+     var dbid= await dbschema.findById(id);
+     res.json(dbid);
+     console.log(dbid);
 })
 
 module.exports = router;
