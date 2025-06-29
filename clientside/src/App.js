@@ -6,7 +6,7 @@ import Nav1 from './inc/Nav1';
 import Selectpage from './pages/Selectpage';
 import Container from "react-bootstrap/Container";
 import Update from './pages/Update';
-
+import Auth from './inc/auth';
 
 import Contact from './pages/Contact';
 
@@ -19,11 +19,12 @@ function App(){
     <Nav1/>
     <Container/>
     <Routes>
-    <Route exact path="/home" element={<Home/>} />
+    <Route exact path="/" element={<Home/>} />
     <Route path="/track" element={<Track/>} />
     <Route path="/contact" element={<Contact/>} />
     <Route path="/select" element={<Selectpage/>} />
     <Route path="/update/:uid" element={<Update/>}/>
+    <Route path="/login" element={<Auth/>} />
 
     </Routes> 
     </BrowserRouter>

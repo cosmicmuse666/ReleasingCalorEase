@@ -1,0 +1,221 @@
+.home-container {
+    background: linear-gradient(to bottom right, #0F0F1E, #1A1A30);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .hero-section {
+    margin-bottom: 5rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-section p {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    color: #ccc;
+  }
+  
+  /* .cta-button {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    background-color: #61dafb;
+    color: #1A1A30;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .cta-button:hover {
+    background-color: #fff;
+    color: #1A1A30;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  } */
+  /* Submit button */
+.cta-button {
+  margin-top: 4rem;
+   margin-bottom: 4rem;
+  padding: 1rem;
+  background:  linear-gradient(270deg, #8dfbd6, #42ffc9); 
+  box-shadow: 0 4px 16px rgba(67, 206, 162, 0.25);
+  color: #15263F;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(330deg, #24c9e6 0%, #35dbf9 50%, #d6fbf7 100%);
+  color: #15263F;
+}
+
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    background-color: rgba(255, 255, 255, 0.036);
+    padding: 2.5rem;
+    border-radius: 15px;
+    width: 30%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #3ffdc7;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+ 
+ .login-modal {
+  background: #0a1833;
+  border-radius: 20px;
+  border: 1.5px solid #2e3a5a;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.login-modal h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.form-label {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  background: #142447;
+  color: #fff;
+  border: 1.5px solid #2e3a5a;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: #43cea2;
+  outline: none;
+  background: #142447;
+  color: #fff;
+}
+
+.btn-green {
+
+  background: linear-gradient(330deg, #24c9e6 0%, #35dbf9 50%, #d6fbf7 100%);
+  color: #15263F;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(67, 206, 162, 0.15);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-green:hover {
+  background:  linear-gradient(270deg, #8dfbd6, #42ffc9); 
+  color: #15263F;
+  
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  transition: color 0.2s;
+}
+
+.btn-close:hover {
+  color: #ffffff;
+}
+
+.text-link {
+  color: #43cea2;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.text-link:hover {
+  color: #185a9d;
+}
+
+.text-danger {
+  color: #ff6b6b;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+} 
+
+@media (max-width: 600px) {
+  .login-modal {
+    max-width: 95vw;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+  .login-form-wrapper {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+}

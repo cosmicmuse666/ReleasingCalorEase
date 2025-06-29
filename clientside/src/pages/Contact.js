@@ -62,7 +62,7 @@ function whenStarting(ev){
           </div>
         </div>
         
-        <div className="form-group floating">
+        <div className="form-group floating my-4">
           <h5>Focus Area</h5>
           <select name="focus" id="focus" onChange={(ev)=>{
             setFocus(ev.target.value);

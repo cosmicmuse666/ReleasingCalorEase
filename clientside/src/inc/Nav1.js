@@ -1,19 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Nav1 = () => {
+  const navigate = useNavigate();
+
   return (
     <nav style={styles.nav}>
-      <Link to="#" style={styles.logo}>ByteWise</Link>
+      <Link to="/" style={styles.logo}>ByteWise</Link>
 
       <div style={styles.centerLinks}>
         <Link to="/" style={styles.link}>Home</Link>
-        <Link to="/select" style={styles.link}>Product</Link>
-        <Link to="/contact" style={styles.link}>Contact</Link>
+        <Link to="/track" style={styles.link}>Track</Link>
+        <Link to="/select" style={styles.link}>Dashboard</Link>        
+        <Link to="/contact" style={styles.link}>Connect</Link>
       </div>
-
+      
       <div>
-        <button style={styles.loginButton}>Track your Calories</button>
+        <button style={styles.loginButton} onClick={() => navigate('/login')}>Track your Calories</button>
       </div>
     </nav>
   );

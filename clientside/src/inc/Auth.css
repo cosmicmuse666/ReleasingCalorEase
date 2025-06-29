@@ -1,0 +1,108 @@
+/* Auth.css */
+
+.auth-container {
+  background: linear-gradient(to bottom right, #0a0c23, #0b0d2a);
+  color: #ffffff;
+  padding: 0;
+}
+
+.auth-image {
+  max-width: 60%; /* Scaled down image */
+  height: auto;
+  animation: floatIn 1.2s ease-in-out;
+}
+
+/* Refined login card */
+.login-form-wrapper {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Clear border */
+  border-radius: 1rem;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Crisp text and input clarity */
+.login-form-wrapper input,
+.login-form-wrapper label {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.login-form-wrapper input.form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-form-wrapper input.form-control:focus {
+  border-color: #4da6ff;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(77, 166, 255, 0.25);
+}
+
+.text-link {
+  color: #4da6ff;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes floatIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Custom green button styling */
+.btn-green {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background:  linear-gradient(270deg, #8dfbd6, #42ffc9); 
+  color: #15263F;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-green:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(330deg, #006d80 0%, #22ccea 50%, #c9fffa 100%);
+  color: #ffffff;
+}
+/* Make placeholder text brighter and more readable */
+.login-form-wrapper input::placeholder {
+  color: #d1d5db; /* Soft light gray */
+  opacity: 1;     /* Ensure it's fully visible */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-image {
+    display: none;
+  }
+
+  .login-form-wrapper {
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .row.vh-100 {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

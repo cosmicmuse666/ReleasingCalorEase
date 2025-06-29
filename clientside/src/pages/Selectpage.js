@@ -38,7 +38,7 @@ let [object, setobject]=useState([])
         <td>{x.meal}</td>
         <td>{x.focus}</td>
         <td>{x.time}</td>
-        <td>{x.image}</td>
+        <td><img src={"http://localhost:5000/uploads/"+x.image} style={{width:"100px", height:"auto"}} alt="" /></td>
         <td> <Link to={'/update/'+x._id}><button className="btn btn-primary"> Update</button> </Link></td>
         <td><button className="btn btn-danger" onClick={ async()=>{
           if(window.confirm("are you sure?")){
