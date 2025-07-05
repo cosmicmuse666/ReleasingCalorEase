@@ -25,6 +25,7 @@ app.use('/mod', mod_route);
 app.use('/auth', signup1);
 
 
+
 app.listen(5000, ()=>{
   console.log('sever running on port 5000');
 });

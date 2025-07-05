@@ -58,14 +58,22 @@ function Auth() {
                   formData.append("pwd", pwd);
                  
 
-                  var output = await fetch("http://localhost:5000/auth/signup", {
+                  var output = await fetch("http://localhost:5000/auth/loggedin", {
                     method: "POST",
                     body: formData,
                   })
+
+
+
                   var result = await output.json();
                   console.log(result);
 
-
+                  if (result.status === "success") {
+                    alert("Login successful");
+                    window.location.href = "/contact"; // Redirect to contact page
+                  } else {
+                    alert(result.message); // Show error message
+                  }
 
                   
 

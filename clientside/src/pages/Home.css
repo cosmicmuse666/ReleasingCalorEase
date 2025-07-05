@@ -13,7 +13,15 @@
   .hero-section {
     margin-bottom: 5rem;
   }
+  .welcome-heading {
+  font-size: 3rem;
+    font-weight: 800; /* Bolder weight for more impact */
+    margin-bottom: 1rem;
+    color: #3ffdc7;
+   
   
+    filter: drop-shadow(1px 2px 4px #85ffdc32);
+  }
   .hero-section h1 {
     font-size: 4.5rem;
     font-weight: bold;
@@ -47,18 +55,19 @@
   } */
   /* Submit button */
 .cta-button {
-  margin-top: 4rem;
-   margin-bottom: 4rem;
-  padding: 1rem;
-  background:  linear-gradient(270deg, #8dfbd6, #42ffc9); 
-  box-shadow: 0 4px 16px rgba(67, 206, 162, 0.25);
-  color: #15263F;
-  font-size: 1.3rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
+ margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 1.5rem 2.5rem; /* Increased from 1rem */
+    background: linear-gradient(270deg, #8dfbd6, #42ffc9);
+    box-shadow: 0 4px 16px rgba(67, 206, 162, 0.25);
+    color: #15263F;
+    font-size: 1.5rem; /* Increased from 1.3rem */
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+     text-transform: uppercase;
 }
 
 .cta-button:hover {
@@ -92,7 +101,7 @@
   .feature-card h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #3ffdc7;
+    color: #ffffff;
   }
   
   .feature-card p {
@@ -117,10 +126,6 @@
   align-items: center;
 }
 
-.login-form-wrapper {
-  width: 100%;
-  padding-top: 1rem;
-}
 
 .login-modal h1 {
   color: #fff;
@@ -129,6 +134,7 @@
   text-align: center;
   margin-bottom: 2rem;
   letter-spacing: 1px;
+  
 }
 
 .form-label {
@@ -144,8 +150,10 @@
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  
   transition: border-color 0.2s;
+  
 }
 
 .form-control:focus {
@@ -153,6 +161,7 @@
   outline: none;
   background: #142447;
   color: #fff;
+  
 }
 
 .btn-green {
@@ -197,10 +206,11 @@
   color: #43cea2;
   text-decoration: underline;
   transition: color 0.2s;
+  
 }
 
 .text-link:hover {
-  color: #185a9d;
+  color: #43b7ce;
 }
 
 .text-danger {

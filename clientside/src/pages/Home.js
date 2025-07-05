@@ -7,94 +7,108 @@ function Home() {
   // const [email, setEmail] = useState('');
   // const [password, setPassword] = useState('');
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
   let [mail, setMail] = useState("");
   let [pwd, setPwd] = useState("");
+  let[check, setCheck]=useState();
+  let[backendmsg, setBackendmsg]=useState("");
+
 
   return (
     <div className="home-container">
       <div className="hero-section">
-        <h1>Welcome to ByteWise</h1>
+        <h1 className="welcome-heading">Welcome to ByteWise</h1>
         <p>
-          Your ultimate health companion for tracking calories <br />
-          Gain your inner peace{" "}
+          Your mindful companion for mastering your nutrition <br />
+          Nurture your Inner Peace <br />
         </p>
 
         {!showLogin && (
-          <button className="cta-button rounded-pill" onClick={() => setShowLogin(true)}>
-            Ease Your CalorEase
+          <button
+            className="cta-button rounded-pill"
+            onClick={() => setShowLogin(true)}
+          >
+            Ready to Thrive
           </button>
         )}
       </div>
 
       {showLogin && (
-        <div className="login-modal">
+        <div className="login-modal " style={{ marginBottom: "6rem" }}>
           <button
             className="btn-close"
             onClick={() => setShowLogin(false)}
             aria-label="Close"
-          >✖️
-            
+          >
+            ✖️
           </button>
-          <div className="login-form-wrapper">
-            <h1>Sign up</h1>
-            {error && <p className="text-danger">{error}</p>}
+          {/* <div className="login-form-wrapper"> */}
+          <h1>Sign up</h1>
+          {error && <p className="text-danger">{error}</p>}
+          {success && <p className="text-success">{success}</p>}
+          <div>
             <div>
-              <div>
-                <label className="form-label">Email</label>
-                <input
-                  type="email"
-                  
-                  className="form-control"
-                  placeholder="Enter your email"
-                  onChange={(e) => setMail(e.target.value)}
-                  
-                />
-              </div>
-              <div>
-                <label className="form-label">Password</label>
-                <input
-                  type="password"
-                  
-                  className="form-control"
-                  placeholder="Enter your password"
-                  onChange={(e) => setPwd(e.target.value)}
-               
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn-green"
-                onClick={async () => {
-                  var formData = new FormData();
-                  formData.append("mail", mail);
-                  formData.append("pwd", pwd);
-                  // alert(mail);
-
-                  var output = await fetch("http://localhost:5000/auth/signup", {
-                    method: "POST",
-                    body: formData,
-                  });
-                  var result = await output.json();
-                  
-                  console.log(result);
-
-                  if (result.status === "success") {
-                    alert("Login successful");
-                    navigate("/contact");
-                  }
-                }}
-              >
-                Sign up
-              </button>
-              <p className="text-center">
-                Don't have an account?{" "}
-                <Link to="/register" className="text-link">
-                  Register here
-                </Link>
-              </p>
+              <label className="form-label">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Enter your email"
+                onChange={(e) => setMail(e.target.value)}
+              />
             </div>
+            <div>
+              <label className="form-label">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Enter your password"
+                onChange={(e) => setPwd(e.target.value)}
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn-green"
+              onClick={async () => {
+                var formData = new FormData();
+                formData.append("mail", mail);
+                formData.append("pwd", pwd);
+                // alert(mail);
+
+                var output = await fetch("http://localhost:5000/auth/signup", {
+                  method: "POST",
+                  body: formData,
+                });
+                var result = await output.json();
+                setCheck(true);
+                setBackendmsg(result.message);
+                console.log(result);
+                // setSuccess("Sign up successful!");
+                // setError("");
+                //   navigate("/track");
+
+                // if (result) {
+                //   setTimeout(() => {
+                //     window.location.href = "/track";
+                //   }, 1500);
+                // } else {
+                //   setError("Please try again.");
+                //   setSuccess("");
+                // }
+              }}
+            >
+              Sign up
+            </button>
+
+            {check?<div><p>Success </p>{backendmsg}</div>  :''}
+            <p className="text-center">
+              Don't have an account?{" "}
+              <Link to="/register" className="text-link">
+                Register here
+              </Link>
+            </p>
           </div>
+          {/* </div> */}
         </div>
       )}
 

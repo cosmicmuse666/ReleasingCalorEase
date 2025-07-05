@@ -238,7 +238,7 @@ function Contact() {
             }
             formData.append("time", whenareyoustarting);
 
-            var fd_output = await fetch("http://localhost:5000/mod/insert1", {
+            var fd_output = await fetch("http://localhost:5000/mod/sync", {
               method: "POST",
               body: formData,
             });

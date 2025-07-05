@@ -64,7 +64,11 @@ router.post("/sync", async (req, res) => {
     time: req.body.time,
   };
 
-  
+  await dbschema.findByIdAndUpdate(id, obj);
+  res.json("updated");
 });
+
+  
+
 
 module.exports = router;
